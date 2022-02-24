@@ -14,24 +14,15 @@
     <script src="js/node_modules/jquery-hijri-date/jquery.hijri.date.min.js"></script>
     <!-- my JS file-->
     <script src="js/myjs.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('.my-date').hijriDate({
-                showWeekDay: false,
-                showGregDate: false,
-                separator: '&nbsp;|&nbsp;',
-                weekDayLang: 'en',
-                hijriLang: 'en',
-                gregLang: 'en',
-                correction: +1
-            });
-        });
-    </script>
+    <script src="js/prayerTime.js"></script>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
 
 </head>
 
 <body>
-
     <div class="nav-body">
         <div href="index.html" class="navbar-brand">
             <img class="logo mx-auto d-block" src="images/logo.jpg">
@@ -52,8 +43,11 @@
                             <a href="Education.html" class="nav-item nav-link text-center px-3 active">Education</a>
                             <a href="Events.html" class="nav-item nav-link  text-center px-3 active">Events</a>
                             <a href="Donation.html" class="nav-item nav-link text-center px-3 active">Donations</a>
-                            <a href="Contactus.html" class="nav-item nav-link text-center bg-green px-3 active">Contact Us</a>
-                            <a href="Construction.html" class="nav-item nav-link text-center bg-green px-3 active">Construction Updates</a>
+                            <a href="Contactus.html" class="nav-item nav-link text-center bg-green px-3 active">Contact
+                                Us</a>
+                            <a href="Construction.html"
+                                class="nav-item nav-link text-center bg-green px-3 active">Construction Updates</a>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -67,7 +61,7 @@
             <h1> بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ </h1>
         </div>
 
-        <div>
+        <div class="my-2">
             <marquee class="news" width="90%" direction="left" height="25px" scrollamount="5">
                 <div>
                     <b class="text-red">Announcements:</b>
@@ -78,104 +72,123 @@
             </marquee>
         </div>
     </div>
-    <div class="container-lg my-3">
+    <div class="container-lg my-2">
         <div class="row">
-            <div class="col-md-6 p-2">
-                <h5 class="text-center">
-                    <img src="images/mosque.png" class="icon" alt="masjid icon">
-                    Welcome to Islamic Center of Laveen
-                </h5>
-                <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <!-- Carousel indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
-                        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
-                        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
-                        <li data-bs-target="#myCarousel" data-bs-slide-to="3"></li>
-                    </ol>
 
-                    <!-- Wrapper for carousel items -->
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="masjid-pics/slide1.jpeg" class="d-block w-100 slide rounded-3" alt="Slide 1">
-                            <h3 class="carousel-caption shadow-sm p-3 mb-5 bg-light text-dark rounded">Daily Five Time
-                                Paryers </h3>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="masjid-pics/slide2.jpeg" class="d-block w-100 slide rounded-3" alt="Slide 2">
-                            <h3 class="carousel-caption shadow-sm p-3 mb-5 bg-light text-dark rounded"> Kids and Adults
-                                Quran Hifz Programs </h3>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="masjid-pics/slide3.jpeg" class="d-block w-100 slide rounded-3" alt="Slide 3">
-                            <h3 class="carousel-caption shadow-sm p-3 mb-5 bg-light text-dark rounded"> Sunday School
-                            </h3>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="masjid-pics/slide4.jpeg" class="d-block w-100 slide rounded-3" alt="Slide 4">
-                            <h3 class="carousel-caption shadow-sm p-3 mb-5 bg-light text-dark rounded"> Dedicated Imam
-                            </h3>
+            <div class="col-md-6">
+                <div class="w-60 h-100 rounded-3 ">
+                    <div class="py-1">
+                        <!-- Hijiri Date jquery element-->
+                        <div class="date text-center my-date py-2"></div>
+                        <div class="date text-center" id="today-date"></div>
+
+                        <h5 class="text-center py-4">
+                            <img src="images/time.png" class="icon px-2" alt="Salah time icon">
+                            Prayer Timings
+                        </h5>
+
+                        <div class="col-md-6 mx-auto">
+                            <table class="table table-borderless text-center ">
+                                <thead>
+                                    <tr class="table-success">
+                                        <th>Prayer Name</th>
+                                        <th>Iqama Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>Fajar</th>
+                                        <th id="fazar"></th>
+                                    </tr>
+                                    <tr>
+                                        <th>Zohar</th>
+                                        <th id="zohar"></th>
+                                    </tr>
+                                    <tr>
+                                        <th>Asar</th>
+                                        <th id="asar"></th>
+                                    </tr>
+                                    <tr>
+                                        <th>Magrib</th>
+                                        <th id="magrib"></th>
+                                    </tr>
+                                    <tr>
+                                        <th>Isha</th>
+                                        <th id="isha"></th>
+                                    </tr>
+                                    <tr class="table-success">
+                                        <th>JUMU'AH </th>
+                                        <th>1:00 PM</th>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Carousel controls -->
-                    <a class="carousel-control-prev" href="#myCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </a>
-                    <a class="carousel-control-next" href="#myCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </a>
+            </div>
+
+            <div class="col-md-6">
+                <div class="w-60 h-100 rounded-3 ">
+                    <h5 class="text-center text-success py-1 ">
+                        <span class="double">Welcome to Islamic Center of Laveen</span>
+                    </h5>
+                    <div class="py-1">
+                        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <!-- Carousel indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                                <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                                <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                                <li data-bs-target="#myCarousel" data-bs-slide-to="3"></li>
+                            </ol>
+
+                            <!-- Wrapper for carousel items -->
+                            <div class="carousel-inner">
+                                <div class="carousel-item  active">
+                                    <img src="masjid-pics/slide1.jpeg" class="d-block w-100 slide rounded-3"
+                                        alt="Slide 1">
+                                    <h3 class="carousel-caption shadow-sm p-3 mb-5 bg-light text-dark rounded">Daily
+                                        Five
+                                        Time
+                                        Paryers </h3>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="masjid-pics/slide2.jpeg" class="d-block  w-100 slide rounded-3"
+                                        alt="Slide 2">
+                                    <h3 class="carousel-caption shadow-sm p-3 mb-5 bg-light text-dark rounded"> Kids and
+                                        Adults
+                                        Quran Hifz Programs </h3>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="masjid-pics/slide3.jpeg" class="d-block  w-100 slide rounded-3"
+                                        alt="Slide 3">
+                                    <h3 class="carousel-caption shadow-sm p-3 mb-5 bg-light text-dark rounded"> Sunday
+                                        School
+                                    </h3>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="masjid-pics/slide4.jpeg" class="d-block  w-100 slide rounded-3"
+                                        alt="Slide 4">
+                                    <h3 class="carousel-caption shadow-sm p-3 mb-5 bg-light text-dark rounded">
+                                        Dedicated
+                                        Imam
+                                    </h3>
+                                </div>
+                            </div>
+
+                            <!-- Carousel controls -->
+                            <a class="carousel-control-prev" href="#myCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </a>
+                            <a class="carousel-control-next" href="#myCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="col-md-6 p-4 ">
-                <h5 class="text-center">
-                    <img src="images/time.png" class="icon" alt="Salah time icon">
-                    Prayer Times
-                </h5>
-                <!-- Hijiri Date jquery element-->
-                <div class="date text-center my-date"></div>
-                <div class="date text-center" id="today-date"></div>
-
-                <div class="col-md-6 mx-auto p-4">
-                    <table class="table table-borderless text-center ">
-                        <thead>
-                            <tr class="table-success">
-                                <th>Salah Name</th>
-                                <th>Iqama Time</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>Fajar</th>
-                                <th>6:30 AM </th>
-                            </tr>
-                            <tr>
-                                <th>Zohar</th>
-                                <th>1:00 PM</th>
-                            </tr>
-                            <tr>
-                                <th>Asar</th>
-                                <th>4:15 PM</th>
-                            </tr>
-                            <tr>
-                                <th>Magrib</th>
-                                <th>5:25 PM</th>
-                            </tr>
-                            <tr>
-                                <th>Isha</th>
-                                <th>7:00 PM</th>
-                            </tr>
-                            <tr class="table-success">
-                                <th>JUMU'AH </th>
-                                <th>1:00 PM</th>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-
-            </div>
         </div>
         <hr class="bg-danger border-2 border-top border-success">
     </div>
@@ -197,22 +210,25 @@
             <div class="row p-4">
                 <h4 class="text-center">
                     <img src="images/paypal.png" class="icon" alt="PayPal icon">
-                     Donate with PayPal
+                    Donate with PayPal
                 </h4>
                 <div class="text-center">
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-    
+
                         <!-- Saved buttons use the "secure click" command -->
                         <input type="hidden" name="cmd" value="_s-xclick">
-                      
+
                         <!-- Saved buttons are identified by their button IDs -->
                         <input type="hidden" name="hosted_button_id" value="108117">
-                      
+
                         <!-- Saved buttons display an appropriate button image. -->
-                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-                        <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-                       
-                      </form>
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
+                            border="0" name="submit" title="PayPal - The safer, easier way to pay online!"
+                            alt="Donate with PayPal button" />
+                        <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1"
+                            height="1" />
+
+                    </form>
                 </div>
             </div>
         </div>
@@ -252,7 +268,7 @@
                     <div class="text-center text-light">
                         <h4 class="p-2">Food distribution</h4>
                         <p class="h5">At Islamic Center of Laveen</p>
-                        
+
                         <div class="h5" id="nextSunday"></div>
                     </div>
                 </div>
@@ -291,8 +307,9 @@
                 </h5>
                 <img src="masjid-pics/quran.jpeg" class="img-fluid rounded-3" alt="Quran Images">
                 <div class="text-center g-4 p-4">
-                    <p>Welcome to the Islamic Center of Laveen (ICL) website which provides a brief overview of the Noor Al-Quran School’s academic
-                         activities and achievements, as well as its policies and procedures.</p>
+                    <p>Welcome to the Islamic Center of Laveen (ICL) website which provides a brief overview of the Noor
+                        Al-Quran School’s academic
+                        activities and achievements, as well as its policies and procedures.</p>
                 </div>
                 <div class="col text-center">
                     <p><a href="Education.html" class="btn btn-success">Learn More &raquo;</a></p>

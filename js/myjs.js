@@ -1,8 +1,6 @@
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = scrollFunction;
-
-
-window.addEventListener('load', dateFunction, false);
+//window.addEventListener('load', dateFunction, false);
 
 function dateFunction() {
   var options = {
@@ -20,7 +18,6 @@ function dateFunction() {
   document.getElementById('nextFriday').innerHTML = nextFriday;
   document.getElementById('nextSaturday').innerHTML = nextSaturday;
   document.getElementById('nextSunday').innerHTML = nextSunday;
-
 }
 
 
@@ -46,3 +43,16 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+
+$(document).ready(function () {
+  $('.my-date').hijriDate({
+      showWeekDay: false,
+      showGregDate: false,
+      separator: '&nbsp;|&nbsp;',
+      weekDayLang: 'en',
+      hijriLang: 'en',
+      gregLang: 'en',
+      correction: +1
+  });
+});
