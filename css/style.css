@@ -8,6 +8,25 @@ body {
 
 }
 
+.sec1 {
+  background-image: url("/images/section1.jpg");
+  background-color: #cccccc;
+  border-radius: 20px;
+  margin: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover !important;
+}
+
+.parking {
+
+  border-radius: 20px;
+
+  height: 300px;
+  width: 340px;
+
+}
+
 /* LOGO */
 .logo {
   position: relative;
