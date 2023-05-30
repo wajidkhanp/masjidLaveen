@@ -1,0 +1,212 @@
+body {
+  /*white back gound*/
+  background-color: #e4fdd8 !important;
+  /*green back gound*/
+  /*background-color: #a7c957; */
+  /* background-color:lightgrey; */
+
+
+}
+
+/* LOGO */
+.logo {
+  position: relative;
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  margin-right: 20px;
+}
+
+.logo-text {
+  color: white;
+  text-align: center;
+  position: relative;
+
+}
+
+.logo-maintext {
+
+  color: white;
+  position: relative;
+
+}
+
+.short-nav {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-size: 18Px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.icon {
+  height: 30px;
+  width: 40px;
+  position: relative;
+
+}
+
+.fimage {
+  height: 25px;
+  width: 30px;
+  position: relative;
+}
+
+.colum-1 {
+  background-image: url("../images/colum1.jpeg");
+  height: 200px;
+  padding-top: 25px;
+  border-radius: 15px 15px 15px 15px;
+}
+
+.colum-2 {
+  background-image: url("../images/colum2.jpeg");
+  height: 200px;
+  padding-top: 25px;
+  border-radius: 15px 15px 15px 15px;
+}
+
+.colum-3 {
+  background-image: url("../images/colum3.jpeg");
+  height: 200px;
+  padding-top: 25px;
+  border-radius: 15px 15px 15px 15px;
+}
+
+.nav-item {
+  font-size: 20px !important;
+}
+
+.event-image {
+
+  width: 100%;
+  height: 100px;
+  border-radius: 15px 15px 15px 15px;
+}
+
+.text-red {
+  color: green;
+}
+
+.date {
+  color: green;
+  font-weight: bold;
+  padding-top: -10px;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  background-color: green;
+  color: whitesmoke;
+}
+
+a.flink {
+  color: black;
+}
+
+.foot {
+  background-image: url('../images/green.jpeg');
+  background-color: teal;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: maroon;
+}
+
+.bismi {
+  font-size: 36px;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  color: green;
+  padding-top: 20px;
+
+}
+
+.nav-body {
+  background-image: url('../images/header2.jpeg');
+  background-color: #cccccc;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover !important;
+  position: relative;
+}
+
+.nav-body::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.news {
+  padding-top: 30px;
+  width: 100%;
+  height: 60px;
+}
+
+.navbar-dark .navbar-toggler-icon {
+  background-image: url('../images/menu.png') !important;
+}
+
+.double {
+  background-image: url('../images/reward.png');
+  background-position: 0 1.03em;
+  background-repeat: repeat-x;
+  background-size: 2px 6px;
+}
+
+.blink_text
+{
+    animation:3s blinker linear infinite;
+    -webkit-animation:3s blinker linear infinite;
+    -moz-animation:1s blinker linear infinite;
+    color: red;
+}
+
+@-moz-keyframes blinker
+{  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker
+{  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker
+{  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+ }
